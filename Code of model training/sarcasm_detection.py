@@ -28,6 +28,14 @@ print(data.head())
 features = data['headline']
 labels = data['is_sarcastic']
 
+
+# Stemming our data
+ps = PorterStemmer()
+
+features = features.apply(lambda x: x.split())
+features = features.apply(lambda x : ' '.join([ps.stem(word) for word in x]))
+
+
 # Term form - Inverse Document form Vectorization 
 # vectorizing the data with maximum of 5000 features
 from sklearn.feature_extraction.text import TfidfVectorizer
