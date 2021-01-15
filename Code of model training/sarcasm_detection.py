@@ -11,6 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import cross_val_score
+from nltk.stem import PorterStemmer
 import pickle
 
 # Loading data from json file
